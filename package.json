@@ -10,7 +10,7 @@
     "db:down": "node src/database/scripts/dbDown.js",
     "tables:up": "node src/database/scripts/tablesUp.js",
     "db:init": "npm run db:up && npm run tables:up",
-    "deploy": "NODE_ENV=production && npm i && npm run db:up && npm run tables:up && npm run start"
+    "deploy": "npm i && npm run db:up && npm run tables:up && npm run start"
   },
   "keywords": [],
   "author": "",
