@@ -27,14 +27,12 @@ app.use(express.static(__dirname + "/upload"));
 app.use("/api/auth", authRoute);
 app.use("/api", tokenRoute);
 app.use("/api", usersRoute);
+// test
+app.set("views", __dirname + "../app/views");
+app.set("view engine", "pug");
 
-app.get("/", (req, res) => {
-  res.status(200).send({
-    status: "success",
-    data: {
-      message: "API working fine",
-    },
-  });
+app.get("/", function (req, res) {
+  res.render("index", { title: "Hey", message: "Server Working!" });
 });
 
 app.use((err, req, res, next) => {
