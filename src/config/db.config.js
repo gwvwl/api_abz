@@ -9,7 +9,9 @@ const { DB_HOST, DB_USER, DB_PASS, DB_NAME } = require("../utils/secrets");
 //   database: DB_NAME,
 // });
 
-const connection = mysql.createConnection(process.env.DATABASE_URL);
+const connection = mysql.createConnection(
+  'mysql://ckweagajcf64vcwudq6f:pscale_pw_YGDSkpbfztPxuyHGDYqPVxYyLY4A9RqS2ugJFNRh5Mu@aws.connect.psdb.cloud/abz?ssl={"rejectUnauthorized":true}'
+);
 
 connection.connect((err) => {
   if (err) logger.error(err.message);
