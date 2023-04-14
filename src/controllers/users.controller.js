@@ -7,13 +7,7 @@ exports.signup = (req, res) => {
   // upload photo
   const id_img_and_format = Date.now() + "." + file.name.split(".").pop();
   file.mv(__dirname + "/../upload/" + id_img_and_format);
-  const photo =
-    "http://" +
-    process.env.DB_HOST +
-    ":" +
-    process.env.PORT +
-    "/" +
-    id_img_and_format;
+  const photo = "http://" + process.env.DB_HOST + "/" + id_img_and_format;
 
   // create a new user
   const positionSwitch = {
